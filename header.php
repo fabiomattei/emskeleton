@@ -3,22 +3,21 @@
     <head>
         <meta name="keywords" content="<?= $this->metakeywords; ?>" />
         <meta name="description" content="<?= $this->metadescritpion; ?>" />
-        <title><?= Magazine::getMagazineTitle() ?></title>
-        <link rel="stylesheet" href="<?= URIMaker::fromBasePath('contents/templates/scheleton/clean.css') ?>" type="text/css" media="screen" />
-		<style type="text/css">
-		@import url("<?= URIMaker::fromBasePath('contents/templates/skeleton/layout.css') ?>");
-		@import url("<?= URIMaker::fromBasePath('contents/templates/skeleton/color.css') ?>");
-		@import url("<?= URIMaker::fromBasePath('contents/templates/skeleton/typography.css') ?>");
-		</style>
+        <title><?= $this->title?></title>
+        <link rel="stylesheet" href="<?= URIMaker::fromBasePath('contents/templates/skeleton/css/clean.css') ?>" type="text/css" media="screen" />
+        <link rel="stylesheet" href="<?= URIMaker::fromBasePath('contents/templates/skeleton/css/layout.css') ?>" type="text/css" media="screen" />
+        <link rel="stylesheet" href="<?= URIMaker::fromBasePath('contents/templates/skeleton/css/color.css') ?>" type="text/css" media="screen" />
+        <link rel="stylesheet" href="<?= URIMaker::fromBasePath('contents/templates/skeleton/css/typography.css') ?>" type="text/css" media="screen" />
     </head>
 
-    <body id="easymagazine" class="magazine">
-
+    <body>
+        <div id="centered">
+            
 		<!-- 1. Magazine Header -->
 
         <div id="header">
-            <a href="<?= URIMaker::fromBasePath('index.php') ?>/"><?= Magazine::getMagazineTitle() ?></a><br />
-			<?= Magazine::getMagazineDescription() ?>
+            <a href="<?= URIMaker::fromBasePath('index.php') ?>/"><?= Magazine::getMagazineTitle() ?></a>
+            <p><?= Magazine::getMagazineDescription() ?></p>
         </div>
 
 		<!-- 2. Magazine Navigation Bar -->

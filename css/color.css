@@ -1,0 +1,22 @@
+body {
+	background:#EEE;
+}
+#content {
+	background: #FFF;
+}
+#main_content {
+	background: transparent;
+	color: #000;
+}
+#sidebar {
+	background: transparent;
+	color: #000;
+}
+#header {
+	background: #666;
+	color: #FFF;
+}
+#magazine_info {
+	background: #666;
+	color: #fff;
+}

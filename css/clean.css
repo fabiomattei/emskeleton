@@ -12,6 +12,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Removes list-style from list */
 ol, ul {
 	font-size: 100%;
+        list-style: none;
 }
 
 /* Normalizes font-size and font-weight to normal */

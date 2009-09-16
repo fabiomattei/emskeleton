@@ -1,0 +1,29 @@
+body {
+	text-align: center;
+}
+#centered {
+	width:730px;
+	margin:auto;
+	text-align: left;
+}
+#content {
+	width:730px;
+	float:left;
+}
+#main_content {
+	float:right;
+	width:500px;
+}
+#sidebar {
+	float:right;
+	width:230px;
+}
+#header {
+}
+#magazine_info {
+	clear: left;
+}
+#header, #main_content, #sidebar, #magazine_info {
+	padding-top:0.5em;
+	padding-bottom:0.5em;
+}
