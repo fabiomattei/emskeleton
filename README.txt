@@ -1,7 +1,7 @@
 Skeleton EasyMagazine 2.0 Template
 http://www.easymagazine.org
 
-This Theme is under GPL License. (http://www.opensource.org/licenses/gpl-license.php)
+This Theme is under GPL3 License. (http://www.opensource.org/licenses/gpl-license.php)
 
 INSTALL: 
 1. Unpack this archive in your easymagazine/contents/templates/ directory.
