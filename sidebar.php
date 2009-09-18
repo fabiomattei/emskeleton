@@ -23,7 +23,7 @@
     <ul id="sidebarwidgeted">
         <li id="Search">
             <h5>Search</h5>
-            <form id="searchform" method="get" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+            <form id="searchform" method="post" action="<?= URIMaker::result() ?>">
                 <input type="text" name="s" id="s" size="30" value="search this site..."/>
                 <input type="submit" value="Search" name="Search" />
             </form>
@@ -45,6 +45,15 @@
             <ul>
                 <? foreach ($this->numbers as $num) : ?>
                 <li><a href="<?= URIMaker::number($num) ?>"><?= $num->getTitle() ?></a></li>
+                <? endforeach; ?>
+            </ul>
+        </li>
+
+        <li id="Categories">
+            <h5>Categories</h5>
+            <ul>
+                <? foreach ($this->categories as $cat) : ?>
+                <li><a href="<?= URIMaker::category($cat) ?>"><?= $cat->getName() ?></a></li>
                 <? endforeach; ?>
             </ul>
         </li>

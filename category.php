@@ -24,15 +24,12 @@
     <!-- 3. Sidebar -->
 
     <?php include("sidebar.php");?>
-
     <!-- 4. Magazine Main Content -->
 
     <div id="main_content">
-        <? if (isset($this->advice)) :?>
-        <p class="advice"><?= $this->advice ?></p>
-        <? endif; ?>
-
-        <? foreach($this->articles  as $article) : ?>
+        <h2><?= $this->category->getName() ?></h2>
+        <div class="categoryDescription"><?= $this->category->getDescription() ?></div>
+        <? foreach($this->articles as $article) : ?>
         <h4><a href="<?=URIMaker::article($article)?>" rel="bookmark"><?= $article->getTitle() ?></a></h4>
 
         <div id="articleSummary">
@@ -44,10 +41,17 @@
                 ?> |
                 <? echo '<a href="'.URIMaker::comment($article).'"> comments ('.count($article->commentsPublished()).') </a>'; ?>
         </div>
+
+        <div id="articleBody">
+                <? if ($article->imageExists()) : ?>
+            <img src="<?= URIMaker::fromBasePath($article->imagePath()) ?>" width="100" align="left" alt="<?= $article->getImgdescription()?>">
+                <? endif; ?>
+                <?= $article->getSummary() ?>
+        </div>
         <? endforeach; ?>
 
         <div id="paginator">
-        <?= $_SESSION['paginator']->renderFullNav()  ?>
+        <?= $this->paginator->renderFullNav()  ?>
         </div>
     </div>
 
