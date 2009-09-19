@@ -46,6 +46,7 @@
             <ul>
                 <li><a href="<?= URIMaker::fromBasePath('index.php') ?>">Home</a></li>
                 <li><a href="<?= URIMaker::people() ?>">People</a></li>
+                <li><a href="<?= URIMaker::numberslist() ?>">Numbers</a></li>
                 <?
                 foreach ($this->pages as $page) {
                     echo '<li><a href="'.URIMaker::page($page).'">'.$page->getTitle().'</a></li>';
