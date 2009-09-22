@@ -31,7 +31,7 @@
         <h3><?= $this->number->getSubtitle() ?></h3>
         <? foreach($this->number->articlesPublished()  as $article) : ?>
         <h4><a href="<?=URIMaker::article($article)?>" rel="bookmark"><?= $article->getTitle() ?></a></h4>
-        
+
         <div id="articleSummary">
                 <?= $article->getCreatedFormatted() ?>  by
                 <?

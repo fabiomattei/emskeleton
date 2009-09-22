@@ -38,6 +38,11 @@
                 <? endif; ?>
                 <?= $this->number->getSummary() ?>
             </div>
+            <? if ($this->number->epubExists()) : ?>
+            <div id="epub">
+                <a href="<?= URIMaker::fromBasePath($this->number->epubPath()) ?>">Download Epub</a>
+            </div>
+            <? endif; ?>
         </li>
 
         <li id="Numbers">
@@ -61,10 +66,8 @@
         <li id="Admin">
             <h5>Admin</h5>
             <ul>
-			hello admin register
-                <li>login logout</li>
-                <li><a href="http://www.wordpress.org/">hello</a></li>
-                <li><a href="http://validator.w3.org/check?uri=referer">hello</a></li>
+                <li><a href="<?= URIMaker::loginPage() ?>">Login</a></li>
+                <li><a href="http://www.easymagazine.org/">Easy Magazine</a></li>
             </ul>
         </li>
     </ul>

@@ -47,7 +47,7 @@
         <? endforeach; ?>
 
         <div id="paginator">
-        <?= $_SESSION['paginator']->renderFullNav()  ?>
+        <?= $_SESSION['paginator']->renderFullNav(URIMaker::result())  ?>
         </div>
     </div>
 

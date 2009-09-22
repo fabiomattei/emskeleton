@@ -32,14 +32,19 @@
         <h3><?= $nu->getSubtitle() ?></h3>
         <div id="numberSummary">
                 <? if ($nu->imageExists()) : ?>
-            <img src="<?= URIMaker::fromBasePath($nu->imagePath()) ?>" width="200" align="left" alt="<?= $nu->getImgdescription()?>">
+            <img src="<?= URIMaker::fromBasePath($nu->imagePath()) ?>" width="200" alt="<?= $nu->getImgdescription()?>">
                 <? endif; ?>
                 <?= $nu->getSummary() ?>
         </div>
+        <? if ($nu->epubExists()) : ?>
+        <div id="epub">
+            <a href="<?= URIMaker::fromBasePath($nu->epubPath()) ?>">Download Epub</a>
+        </div>
+        <? endif; ?>
         <? endforeach; ?>
 
         <div id="paginator">
-        <?= $this->paginator->renderFullNav()  ?>
+            <?= $this->paginator->renderFullNav(URIMaker::numberslist())  ?>
         </div>
     </div>
 

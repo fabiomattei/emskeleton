@@ -29,7 +29,7 @@
 
     <div id="main_content">
         <h2>All articles by <?= $this->person->getName() ?></h2>
-        <? foreach($this->person->articles() as $article) : ?>
+        <? foreach($this->articles as $article) : ?>
         <h4><a href="<?=URIMaker::article($article)?>" rel="bookmark"><?= $article->getTitle() ?></a></h4>
 
         <div id="articleHead">
@@ -53,6 +53,10 @@
                 <?= $article->getBody() ?>
         </div>
         <? endforeach; ?>
+
+        <div id="paginator">
+            <?= $this->paginator->renderFullNav(URIMaker::articlesperson($this->person))  ?>
+        </div>
     </div>
 
 </div>

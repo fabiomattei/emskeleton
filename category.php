@@ -51,7 +51,7 @@
         <? endforeach; ?>
 
         <div id="paginator">
-        <?= $this->paginator->renderFullNav()  ?>
+            <?= $this->paginator->renderFullNav(URIMaker::category($this->category))  ?>
         </div>
     </div>
 

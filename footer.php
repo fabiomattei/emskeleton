@@ -22,6 +22,6 @@
 <!-- 5. Magazine Info -->
 
     <div id="magazine_info">
-        <?= Magazine::getMagazinePublisher()?> <?= Magazine::getMagazineRights()?>
+        <?= Magazine::getMagazinePublisher()?> <?= Magazine::getMagazineRights()?> Powered by <a href="http://www.easymagazine.org/">Easy Magazine</a>
     </div>
 </div>   <!-- Closes the "centered" div -->
