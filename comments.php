@@ -68,6 +68,7 @@
 
         <? endforeach; ?>
 
+        <? if ($this->article->getCommentsallowed() && $this->article->number()->getCommentsallowed()): ?>
         <form name="newcomment" method="post" action="<?= URIMaker::comment($this->article) ?>">
             Title<br />
             <input type="text" name="Title" value=""/><br />
@@ -80,5 +81,6 @@
             <input type="text" name="code" /><br /><br />
             <input type="submit" value="Ok" name="Ok" />
         </form>
+        <? endif; ?>
     </div>
 </div>
