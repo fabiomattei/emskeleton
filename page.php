@@ -32,11 +32,18 @@
 
         <div id="pageSummary">
             <? if ($this->page->imageExists()) : ?>
-            <img src="<?= URIMaker::fromBasePath($this->page->imagePath()) ?>" width="100" align="left" alt="<?= $this->page->getImgdescription()?>">
+            <div id="image">
+                <img src="<?= URIMaker::fromBasePath($this->page->imagePath()) ?>" width="100" alt="<?= $this->page->getImgAlt()?>">
+                    <? if ($this->page->getImgCaption() != ''): ?>
+                <div id="caption">
+                            <?= $this->page->getImgCaption() ?>
+                </div>
+                    <? endif; ?>
+            </div>
             <? endif; ?>
             <?= $this->page->getSummary() ?>
         </div>
-        
+
         <div id="pageBody">
             <?= $this->page->getBody() ?>
         </div>

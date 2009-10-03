@@ -31,7 +31,14 @@
         <h2><a href="<?= URIMaker::articlesperson($user) ?>"><?= $user->getName() ?></a></h2>
         <div id="userSummary">
                 <? if ($user->imageExists()) : ?>
-            <img src="<?= URIMaker::fromBasePath($user->imagePath()) ?>" width="60" align="left" alt="<?= $user->getImgdescription()?>">
+            <div id="image">
+                <img src="<?= URIMaker::fromBasePath($user->imagePath()) ?>" width="60" alt="<?= $user->getImgAlt()?>">
+                        <? if ($user->getImgCaption() != ''): ?>
+                <div id="caption">
+                                <?= $user->getImgCaption() ?>
+                </div>
+                        <? endif; ?>
+            </div>
                 <? endif; ?>
                 <?= $user->getBody() ?>
         </div>

@@ -44,7 +44,14 @@
 
         <div id="articleBody">
                 <? if ($article->imageExists()) : ?>
-            <img src="<?= URIMaker::fromBasePath($article->imagePath()) ?>" width="100" align="left" alt="<?= $article->getImgdescription()?>">
+                <div id="image">
+                <img src="<?= URIMaker::fromBasePath($article->imagePath()) ?>" width="100" alt="<?= $article->getImgAlt()?>">
+                <? if ($article->getImgCaption() != ''): ?>
+                <div id="caption">
+                <?= $article->getImgCaption() ?>
+                </div>
+                <? endif; ?>
+                </div>
                 <? endif; ?>
                 <?= $article->getSummary() ?>
         </div>

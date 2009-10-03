@@ -29,12 +29,23 @@
             </form>
         </li>
 
+        <li id="Rssfeed">
+            <a href="<?= URIMaker::rssFeed()?>"><img src="<?= URIMaker::fromBasePath('contents/templates/skeleton/images/rss-icon.png') ?>"> RSS Feed</a>
+        </li>
+
         <li id="Number">
             <h5><?= $this->number->getTitle() ?></h5>
             <h6><?= $this->number->getSubtitle() ?></h6>
             <div id="numberDescription">
                 <? if ($this->number->imageExists()) : ?>
-                <img src="<?= URIMaker::fromBasePath($this->number->imagePath()) ?>" width="200" alt="<?= $this->number->getImgdescription()?>">
+                <div id="image">
+                    <img src="<?= URIMaker::fromBasePath($this->number->imagePath()) ?>" width="200" alt="<?= $this->number->getImgAlt()?>">
+                        <? if ($this->number->getImgCaption() != ''): ?>
+                    <div id="caption">
+                                <?= $this->number->getImgCaption() ?>
+                    </div>
+                        <? endif; ?>
+                </div>
                 <? endif; ?>
                 <?= $this->number->getSummary() ?>
             </div>

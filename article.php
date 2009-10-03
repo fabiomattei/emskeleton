@@ -42,11 +42,18 @@
 
         <div id="articleSummary">
             <? if ($this->article->imageExists()) : ?>
-            <img src="<?= URIMaker::fromBasePath($this->article->imagePath()) ?>" width="100" align="left" alt="<?= $this->article->getImgdescription()?>">
+            <div id="image">
+                <img src="<?= URIMaker::fromBasePath($this->article->imagePath()) ?>" width="200" alt="<?= $this->article->getImgAlt()?>">
+                <? if ($this->article->getImgCaption() != ''): ?>
+                    <div id="caption">
+                    <?= $this->article->getImgCaption() ?>
+                    </div>
+                <? endif; ?>
+            </div>
             <? endif; ?>
             <?= $this->article->getSummary() ?>
         </div>
-        
+
         <div id="articleBody">
             <?= $this->article->getBody() ?>
         </div>
